@@ -1,0 +1,106 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @if (ViewBag.Vorname == null)
+    {
+        <div>
+            <form method="post" action="/home/index" style="margin-left: 40px;background-color:#1c87c9;border-radius:11pt">
+                <fieldset style="margin-left: 40px;background-color:green;border-radius:11pt">
+                    <legende>Persönliche Daten</legende>
+                    <br />
+                    <input type="text" autofocus required placeholder="Vorname" id="inpVorname" name="inpVorname" />
+                    <label for="inpVorname">Vorname</label>
+                    <br />
+                    <input type="text" required placeholder="Nachname" id="inpNachname" name="inpNachname" />
+                    <label for="inpNachname">Nachname</label>
+                    <br />
+                    <input type="date" id="inpGeburtsdatum" name="inpGeburtsdatum" required value="1979-01-01" />
+                    <label for="inpGeburtsdatum">Geburtsdatum</label>
+                    <br />
+                </fieldset>
+                <fieldset style="margin-left: 40px;background-color:cornflowerblue;border-radius:11pt">
+                    <legende>Geschlecht</legende>
+                    <br />
+                    <input type="radio" id="inpWeiblich" name="inpGeschlecht" value="weiblich" />
+                    <label for="inpWeiblich">weiblich</label>
+                    <br />
+                    <input type="radio" id="inpMännlich" name="inpGeschlecht" value="männlich" />
+                    <label for="inpMännlich">männlich</label>
+                    <br />
+                    <input type="radio" id="inpDivers" name="inpGeschlecht" value="divers" />
+                    <label for="inpDivers">divers</label>
+                    <br />
+                </fieldset>
+                <fieldset style="margin-left: 40px;background-color:yellow;border-radius:11pt">
+                    <legende>
+                        Betriebssysteme
+                    </legende>
+                    <table>
+                        <tr>
+                            <td><input type="checkbox" id="inpWin" name="inpWin" value="Windows" /></td>
+                            <td><label for="inpWin">Windows</label></td>
+                            <td><input type="checkbox" id="inpLinux" name="inpLinux" value="Linux" /></td>
+                            <td><label for="inpLinux">Linux</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="inpIOs" name="inpIOs" value="IOs" /></td>
+                            <td><label for="inpIOs">IOs</label></td>
+                            <td><input type="checkbox" id="inpAndroid" name="inpAndroid" value="Android" /></td>
+                            <td><label for="inpAndroid">Android</label></td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <fieldset style="margin-left: 40px;background-color:turquoise;border-radius:11pt">
+                    <legende>Bemerkungen</legende>
+                    <br />
+                    <textarea id="textAreaBemerkungen" name="textAreaBemerkungen" rows="11" width="100%"></textarea>
+                </fieldset>
+                <fieldset style="margin-left: 40px;background-color:aliceblue;border-radius:11pt">
+                    <button type="submit" id="btnSenden" name="btnSenden">Senden</button>
+                    <button type="reset" id="btnRest" name="btnReset">Reset</button>
+                </fieldset>
+            </form>
+        </div>
+        } else
+            {
+                <div>
+                    <form form method="get" action="/home/index" style="margin-left: 40px;background-color:greenyellow;border-radius:11pt">
+                        <fieldset style="margin-left: 40px;background-color:aqua;border-radius:11pt">
+                            <legende>Ihre Daten</legende>
+                            <table border="1">
+                                <tr>
+                                    <td>@ViewBag.Vorname</td>
+                                    <td>@ViewBag.Nachname</td>
+                                    <td>@ViewBag.Geburtstag</td>
+                                </tr>
+                                <tr>
+                                    <td>@ViewBag.Geschlecht</td>
+                                </tr>
+                            </table>
+                            <ul>
+                                @foreach (var betriebsSystem in ViewBag.ListeBetriebssysteme)
+                                {
+                                    <li>@betriebsSystem</li>
+                                }
+                            </ul>
+                            @ViewBag.Bemerkungen
+                        </fieldset>
+                        <fieldset>
+                            <a href="/home/index">Hier geht's zum Glück zurück</a>
+                        </fieldset>
+                    </form>
+                </div>
+            }
+
+</body>
+</html>

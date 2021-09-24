@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2021_267_Web_FIA35_Formular", "2021_267_Web_FIA35_Formular\2021_267_Web_FIA35_Formular.csproj", "{5C90ECD6-CB3A-4160-B2DC-51F21D407B2A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C90ECD6-CB3A-4160-B2DC-51F21D407B2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C90ECD6-CB3A-4160-B2DC-51F21D407B2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C90ECD6-CB3A-4160-B2DC-51F21D407B2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C90ECD6-CB3A-4160-B2DC-51F21D407B2A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B31975D-FE7B-47DB-BFF6-977B520D1B3E}
+	EndGlobalSection
+EndGlobal
